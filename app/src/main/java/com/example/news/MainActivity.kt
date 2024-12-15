@@ -36,7 +36,8 @@ class MainActivity : AppCompatActivity() {
 
         val registerRequest = RegisterRequest(username, password, fullname, email)
         try {
-            ApiClient.apiService.register(registerRequest).enqueue(object : Callback<RegisterResponse> {
+
+            ApiClient.apiService.register(username,password,fullname,email).enqueue(object : Callback<RegisterResponse> {
                 override fun onResponse(
                     call: Call<RegisterResponse>,
                     response: Response<RegisterResponse>
